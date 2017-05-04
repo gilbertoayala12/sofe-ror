@@ -3,8 +3,8 @@ class Product < ApplicationRecord
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  scope :meal, -> { where.not(product_type: :meal) }
-  scope :dessert, -> { where(created_at: 1.year.ago..Date.today.end_of_day) }
+  scope :meal, -> { where(product_type: :meal) }
+  scope :dessert, -> { where(product_type: :dessert) }
 
   def self.types
     %w(dessert meal)

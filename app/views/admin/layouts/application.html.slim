@@ -25,7 +25,17 @@ html
                 ul.nav.navbar-nav
                   li.active
                     = link_to t('admin.navigation.home'), admin_welcome_index_path
-                   
+
+                    li.active
+                      = link_to t('products'), admin_products_path
+
+                    li.active
+                        = link_to t('orders'), admin_orders_path
+
+                        li.active
+                            = link_to t('customers'), admin_customers_path
+
+
                 ul.nav.navbar-nav.navbar-right
                   li
                     = link_to t('admin.navigation.shop'), admin_welcome_index_path

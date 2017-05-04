@@ -14,7 +14,7 @@
       - @orders.each do |order|
         tr
           td = order.id
-          td = order.product.present? ? link_to(order.product.name, admin_product_path(order.product)) : 'DELETED'
+          td = order.product.present? ? link_to(order.product.name, admin_product_path(order.product)) : 'Order #{ID} was deleted'
           td = order.status
           td.strong = number_to_currency(order.total)
           td = order.customer.present? ? order.customer.name : nil

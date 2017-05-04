@@ -4,6 +4,8 @@ class Admin::ProductsController < Admin::BaseController
 
   def index
     @products = Product.all.order(created_at: :desc)
+    @products= Product.dessert.order()
+    @products= Product.meal.order()
   end
 
   def show
@@ -35,6 +37,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def destroy
+    
     flash.now[:danger] = 'Product deleted'
     @product.destroy
     redirect_to admin_products_path

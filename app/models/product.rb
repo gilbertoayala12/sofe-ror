@@ -22,4 +22,6 @@ class Product < ApplicationRecord
   def total
     price + drinks + delivery
   end
+  
+  
 end
